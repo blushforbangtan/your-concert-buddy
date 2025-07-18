@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎧 Who's Your Concert Buddy?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom right, #f5f5f5, #ffe8ec);
+      color: #333;
+      padding: 30px;
+    }
+    .game-box {
+      background: #fff;
+      padding: 30px;
+      max-width: 350px;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #d63384;
+    }
+    button {
+      background: #ff4e77;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #cc2f5f;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎧 Who's Your Summer Concert Buddy?</h1>
+  <div class="game-box">
+    <p>Pick a color vibe:</p>
+    <button onclick="showResult('Blue')">Blue 🌊</button>
+    <button onclick="showResult('Pink')">Pink 💖</button>
+    <button onclick="showResult('Green')">Green 🌿</button>
+    <button onclick="showResult('Orange')">Orange ☀️</button>
+
+    <div id="result"></div>
+    <br><br>
+    <button id="doneButton" style="display:none;" onclick="redirectToSpotify()">🎶 Let’s Go!</button>
+  </div>
+
+  <script>
+    const buddies = {
+      "Blue": "Dua Lipa",
+      "Pink": "Olivia Rodrigo",
+      "Green": "The Weeknd",
+      "Orange": "Post Malone"
+    };
+
+    function showResult(color) {
+      const buddy = buddies[color];
+      document.getElementById("result").innerHTML = `Your concert buddy is <b>${buddy}</b>! 🎤`;
+      document.getElementById("doneButton").style.display = "inline-block";
+    }
+
+    function redirectToSpotify() {
+      // Replace with YOUR chosen Spotify link
+      window.location.href = "https://open.spotify.com/album/7xLhqoM0ilHRKUg2irVSDI?si=QFT9QcB2S_ez7xxhX3MFBQ"; // Example: Dua Lipa – Radical Optimism
+    }
+  </script>
+
+</body>
+</html>
